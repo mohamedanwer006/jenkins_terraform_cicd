@@ -1,6 +1,7 @@
 terraform {
     backend "s3" {
-      shared_credentials_file = "credentials"
+      # access_key = var.access_key
+      # secret_key = var.secret_key
       bucket         = "test-tf-statefiill"
       region         = "us-east-1"
       key            = "terraform.tfstate"
@@ -8,12 +9,15 @@ terraform {
     }
   required_providers {
     aws = "~> 3.0"
+
   }
 
 }
 
 
 provider "aws" {
-    shared_credentials_file = "credentials"
+  # access_key = var.access_key
+  # secret_key = var.secret_key
+    # shared_credentials_file = "credentials"
     # profile                 = "mohamedanwer006"/  
 }
